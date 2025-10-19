@@ -22,7 +22,7 @@ type AppConfig struct {
 // Load reads environment variables and applies sensible defaults.
 // Supports either DATABASE_URL or individual DB_* variables.
 func Load() AppConfig {
-	appPort := getEnv("APP_PORT", "8080")
+	appPort := getEnv("PORT", "8080")
 	runMigrations := getEnvBool("RUN_MIGRATIONS", false)
 
 	// Prefer DATABASE_URL (Railway, Render, etc.)
